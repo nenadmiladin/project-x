@@ -8,5 +8,8 @@ az aks install-cli
 
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 
-#Delete
+# Delete
 #az group delete --name myResourceGroup --yes --no-wait
+
+#Show info
+#az aks show --resource-group myResourceGroup --name myAKSCluster

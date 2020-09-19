@@ -1,3 +1,4 @@
+#!/bin/bash
 
 az group create --name myResourceGroup --location eastus
 

@@ -110,16 +110,16 @@ $ terraform output kube_config > ~/.kube/aksconfig
 $ export KUBECONFIG=~/.kube/aksconfig
 ```
 
-Save kubernetes config file to `~/.kube/aksconfig`
+Save kubernetes config file to `~/.kube/config`
 
 ```bash
-terraform output kube_config > ~/.kube/aksconfig
+terraform output kube_config > ~/.kube/config
 ```
 
 Set `KUBECONFIG` environment variable to the kubernetes config file
 
 ```bash
-export KUBECONFIG=~/.kube/aksconfig
+export KUBECONFIG=~/.kube/config
 ```
 
 * Test configuration.

@@ -9,23 +9,23 @@ variable location {
 
 ## Resource group variables ##
 variable resource_group_name {
-  default = "cyrilic-rg"
+  default = "myResourceGroup"
 }
 
 
 ## AKS kubernetes cluster variables ##
 variable cluster_name {
-  default = "cyrilic-cluster"
+  default = "myAKSCluster"
 }
 
 variable "agent_count" {
-  default = 2
+  default = 1
 }
 
 variable "dns_prefix" {
-  default = "cyrilic"
+  default = "myAKSCluste"
 }
 
 variable "admin_username" {
-    default = "cyrilic"
+    default = "azureuser"
 }

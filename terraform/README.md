@@ -1,7 +1,3 @@
-# Deploy Infrastructure:
-
-
-
 # Azure Kubernetes Service (AKS) with Terraform
 
 This folder contains HashiCorp Terraform configuration required to create a Azure AKS cluster.

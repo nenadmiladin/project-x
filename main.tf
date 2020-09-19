@@ -4,7 +4,7 @@ provider "azurerm" {
 }
 
 ## Azure resource group for the kubernetes cluster ##
-resource "azurerm_resource_group" "aks_cyrilic" {
+resource "azurerm_resource_group" "myResourceGroup" {
   name     = var.resource_group_name
   location = var.location
 }
@@ -12,8 +12,8 @@ resource "azurerm_resource_group" "aks_cyrilic" {
 ## AKS kubernetes cluster ##
 resource "azurerm_kubernetes_cluster" "cyrilic" { 
   name                = var.cluster_name
-  resource_group_name = azurerm_resource_group.aks_cyrilic.name
-  location            = azurerm_resource_group.aks_cyrilic.location
+  resource_group_name = azurerm_resource_group.myResourceGroup.name
+  location            = azurerm_resource_group.myResourceGroup.location
   dns_prefix          = var.dns_prefix
 
   linux_profile {
@@ -67,34 +67,34 @@ EOF
 
 # Example attributes available for output
 output "id" {
-    value = "${azurerm_kubernetes_cluster.cyrilic.id}"
+    value = "${azurerm_kubernetes_cluster.myAKSCluster.id}"
 }
 
 output "client_key" {
-  value = "${azurerm_kubernetes_cluster.cyrilic.kube_config.0.client_key}"
+  value = "${azurerm_kubernetes_cluster.myAKSCluster.kube_config.0.client_key}"
 }
 
 output "client_certificate" {
-  value = "${azurerm_kubernetes_cluster.cyrilic.kube_config.0.client_certificate}"
+  value = "${azurerm_kubernetes_cluster.myAKSCluster.kube_config.0.client_certificate}"
 }
 
 output "cluster_ca_certificate" {
-  value = "${azurerm_kubernetes_cluster.cyrilic.kube_config.0.cluster_ca_certificate}"
+  value = "${azurerm_kubernetes_cluster.myAKSCluster.kube_config.0.cluster_ca_certificate}"
 }
 
 output "kube_config" {
-  value = azurerm_kubernetes_cluster.cyrilic.kube_config_raw
+  value = azurerm_kubernetes_cluster.myAKSCluster.kube_config_raw
 }
 
 output "host" {
-  value = azurerm_kubernetes_cluster.cyrilic.kube_config.0.host
+  value = azurerm_kubernetes_cluster.myAKSCluster.kube_config.0.host
 }
 
 output "configure" {
   value = <<CONFIGURE
 Run the following commands to configure kubernetes client:
 $ terraform output kube_config > ~/.kube/aksconfig
-$ export KUBECONFIG=~/.kube/aksconfig
+$ export KUBECONFIG=~/.kube/config
 Test configuration using kubectl
 $ kubectl get nodes
 CONFIGURE

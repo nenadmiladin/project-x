@@ -16,6 +16,8 @@ sudo apt-key fingerprint 0EBFCD88
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt-get update
 sudo apt-get install docker-ce -y
+sudo apt  install docker-compose -y
+sudo apt install gnupg2 pass -y
 
 # Azure CLI
 sudo apt-get install ca-certificates curl apt-transport-https lsb-release gnupg -y

@@ -41,7 +41,7 @@ then
 
     # Copy Kube config file to Jenkins
     ssh -o stricthostkeychecking=no $adminUser@$ip sudo chmod 777 /var/lib/jenkins
-    yes | scp $pathToKubeConfig $adminUser@$ip:/var/lib/jenkins/config
+    yes | scp -o stricthostkeychecking=no $pathToKubeConfig $adminUser@$ip:/var/lib/jenkins/config
     ssh -o stricthostkeychecking=no $adminUser@$ip sudo chmod 777 /var/lib/jenkins/config
 
     # Get Jenkins Unlock Key

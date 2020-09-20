@@ -31,15 +31,15 @@ then
     echo $ip
 
     # Copy Kube config file to Jenkins
-#    ssh -o "StrictHostKeyChecking no" $adminUser@$ip sudo chmod 777 /var/lib/jenkins
-#    yes | scp $pathToKubeConfig $adminUser@$ip:/var/lib/jenkins/config
-#    ssh -o "StrictHostKeyChecking no" $adminUser@$ip sudo chmod 777 /var/lib/jenkins/config
+     ssh -o "StrictHostKeyChecking no" $adminUser@$ip sudo chmod 777 /var/lib/jenkins
+     yes | scp $pathToKubeConfig $adminUser@$ip:/var/lib/jenkins/config
+     ssh -o "StrictHostKeyChecking no" $adminUser@$ip sudo chmod 777 /var/lib/jenkins/config
 
     # Get Jenkins Unlock Key
-#    url="http://$ip:8080"
-#    echo "Open a browser to $url"
-#    echo "Enter the following to Unlock Jenkins:"
-#    ssh -o "StrictHostKeyChecking no" $adminUser@$ip sudo "cat /var/lib/jenkins/secrets/initialAdminPassword"
+     url="http://$ip:8080"
+     echo "Open a browser to $url"
+     echo "Enter the following to Unlock Jenkins:"
+     ssh -o "StrictHostKeyChecking no" $adminUser@$ip sudo "cat /var/lib/jenkins/secrets/initialAdminPassword"
 
 else
     echo "Kubernetes configuration / authentication file not found. Run az aks get-credentials to download this file."

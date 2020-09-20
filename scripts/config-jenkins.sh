@@ -5,7 +5,7 @@ sudo wget -qO - https://pkg.jenkins.io/debian-stable/jenkins.io.key | apt-key ad
 sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 
 sudo apt-get update
-sudo apt install openjdk-8-jdk -y
+sudo apt install openjdk-8-jdk
 sleep 5
 sudo apt-get install jenkins -y
 
@@ -18,9 +18,9 @@ sudo apt-get update
 sudo apt-get install docker-ce -y
 
 # Azure CLI
-sudo curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-sudo apt-get install apt-transport-https
-sudo apt-get update && sudo apt-get install azure-cli
+#sudo curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+#sudo apt-get install apt-transport-https
+#sudo apt-get update && sudo apt-get install azure-cli
 
 # Kubectl
 cd /tmp/

@@ -6,6 +6,7 @@ sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sour
 
 sudo apt-get update
 sudo apt install openjdk-8-jdk
+sleep 5
 sudo apt-get install jenkins -y
 
 # Docker

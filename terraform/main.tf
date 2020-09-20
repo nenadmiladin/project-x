@@ -10,7 +10,7 @@ resource "azurerm_resource_group" "myResourceGroup" {
 }
 
 ## AKS kubernetes cluster ##
-resource "azurerm_kubernetes_cluster" "cyrilic" { 
+resource "azurerm_kubernetes_cluster" "myAKSCluster" { 
   name                = var.cluster_name
   resource_group_name = azurerm_resource_group.myResourceGroup.name
   location            = azurerm_resource_group.myResourceGroup.location

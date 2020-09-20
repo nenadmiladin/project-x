@@ -30,6 +30,8 @@ then
     ip=$(az vm list-ip-addresses --resource-group $resourceGroup --name $virtualMachine --query [0].virtualMachine.network.publicIpAddresses[0].ipAddress -o tsv)
 
     echo $ip
+    
+    az vm run-command invoke -g myResourceGroup -n Jenkins-Master --command-id RunShellScript --scripts "sudo wget -qO - https://pkg.jenkins.io/debian-stable/jenkins.io.key | apt-key add -"
 
     scp -o stricthostkeychecking=no /home/$(whoami)/project-x/scripts/config-jenkins.sh $adminUser@$ip:/tmp
 

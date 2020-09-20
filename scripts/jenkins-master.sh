@@ -31,7 +31,7 @@ then
 
     echo $ip
 
-    yes | scp /home/$(whoami)/project-x/scripts/config-jenkins.sh $adminUser@$ip:/tmp
+    scp -o stricthostkeychecking=no /home/$(whoami)/project-x/scripts/config-jenkins.sh $adminUser@$ip:/tmp
 
     ssh -o stricthostkeychecking=no azureuser@52.147.199.141 sh /tmp/config-jenkins.sh
 

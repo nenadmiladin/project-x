@@ -23,23 +23,30 @@ then
     az vm open-port --port 8080 --resource-group $resourceGroup --name $virtualMachine --priority 103
 
     # Use CustomScript extension to install NGINX.
-    az vm extension set --publisher Microsoft.Azure.Extensions --version 2.0 --name CustomScript --vm-name $virtualMachine --resource-group $resourceGroup --settings '{"fileUris": ["https://raw.githubusercontent.com/nenadmiladin/project-x/master/scripts/config-jenkins.sh"],"commandToExecute": "./config-jenkins.sh"}'
+#    az vm extension set --publisher Microsoft.Azure.Extensions --version 2.0 --name CustomScript --vm-name $virtualMachine --resource-group $resourceGroup --settings '{"fileUris": ["https://raw.githubuser
+content.com/nenadmiladin/project-x/master/scripts/config-jenkins.sh"],"commandToExecute": "./config-jenkins.sh"}'
 
     # Get public IP
     ip=$(az vm list-ip-addresses --resource-group $resourceGroup --name $virtualMachine --query [0].virtualMachine.network.publicIpAddresses[0].ipAddress -o tsv)
 
     echo $ip
 
+    yes | scp /home/$(whoami)/project-x/scripts/config-jenkins.sh $adminUser@$ip:/tmp
+
+    ssh -o stricthostkeychecking=no azureuser@52.147.199.141 sh /tmp/config-jenkins.sh
+
+    ssh -o stricthostkeychecking=no $adminUser@$ip sudo chmod 777 /var/lib/jenkins
+
     # Copy Kube config file to Jenkins
-     ssh -o "StrictHostKeyChecking no" $adminUser@$ip sudo chmod 777 /var/lib/jenkins
-     yes | scp $pathToKubeConfig $adminUser@$ip:/var/lib/jenkins/config
-     ssh -o "StrictHostKeyChecking no" $adminUser@$ip sudo chmod 777 /var/lib/jenkins/config
+    ssh -o stricthostkeychecking=no $adminUser@$ip sudo chmod 777 /var/lib/jenkins
+    yes | scp $pathToKubeConfig $adminUser@$ip:/var/lib/jenkins/config
+    ssh -o stricthostkeychecking=no $adminUser@$ip sudo chmod 777 /var/lib/jenkins/config
 
     # Get Jenkins Unlock Key
-     url="http://$ip:8080"
-     echo "Open a browser to $url"
-     echo "Enter the following to Unlock Jenkins:"
-     ssh -o "StrictHostKeyChecking no" $adminUser@$ip sudo "cat /var/lib/jenkins/secrets/initialAdminPassword"
+    url="http://$ip:8080"
+    echo "Open a browser to $url"
+    echo "Enter the following to Unlock Jenkins:"
+    ssh -o "StrictHostKeyChecking no" $adminUser@$ip sudo "cat /var/lib/jenkins/secrets/initialAdminPassword"
 
 else
     echo "Kubernetes configuration / authentication file not found. Run az aks get-credentials to download this file."

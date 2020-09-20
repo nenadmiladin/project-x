@@ -25,11 +25,11 @@ sudo apt-get update && sudo apt-get install azure-cli
 # Kubectl
 cd /tmp/
 sudo curl -kLO https://storage.googleapis.com/kubernetes-release/release/v1.8.0/bin/linux/amd64/kubectl
-chmod +x ./kubectl
+sudo chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 
 # Configure access
-usermod -aG docker jenkins
-usermod -aG docker azureuser
+sudo usermod -aG docker jenkins
+sudo usermod -aG docker azureuser
 sudo touch /var/lib/jenkins/jenkins.install.InstallUtil.lastExecVersion
 sudo service jenkins restart

@@ -8,7 +8,7 @@ sudo apt-get update
 sudo apt install openjdk-8-jdk -y
 sleep 5
 sudo apt-get install jenkins -y
-
+echo "Jenkins Installed"
 # Docker
 sudo apt-get install apt-transport-https ca-certificates curl software-properties-common -y
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -39,3 +39,4 @@ sudo usermod -aG docker jenkins
 sudo usermod -aG docker azureuser
 sudo touch /var/lib/jenkins/jenkins.install.InstallUtil.lastExecVersion
 sudo service jenkins restart
+echo "Jenkins starting"

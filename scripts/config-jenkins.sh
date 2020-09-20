@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Jenkins
-sudo wget -qO - https://pkg.jenkins.io/debian-stable/jenkins.io.key | apt-key add -
+#sudo wget -qO - https://pkg.jenkins.io/debian-stable/jenkins.io.key | apt-key add -
 sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 
 sudo apt-get update

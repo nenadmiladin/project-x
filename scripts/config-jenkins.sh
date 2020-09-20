@@ -32,4 +32,4 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 usermod -aG docker jenkins
 usermod -aG docker azureuser
 sudo touch /var/lib/jenkins/jenkins.install.InstallUtil.lastExecVersion
-service jenkins restart
+sudo service jenkins restart

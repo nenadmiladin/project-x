@@ -1,0 +1,4 @@
+on Jenkins Master
+```bash
+export ANSIBLE_ASK_SUDO_PASS=true
+```

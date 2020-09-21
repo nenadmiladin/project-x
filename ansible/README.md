@@ -4,7 +4,7 @@ Get Azuer Dynamic Inventory Script
 ```bash
 git clone https://github.com/ansible/ansible/blob/stable-2.9/lib/ansible/plugins/inventory/azure_rm.py
 ```
-
+Create a Service Principal for Ansible
 ```bash
 nenad@Azure:~$ az ad sp create-for-rbac --name svc-ansible-azur
 Changing "svc-ansible-azur" to a valid URI of "http://svc-ansible-azur", which is the required format used for service principal names
@@ -32,4 +32,8 @@ nenad@Azure:~$ az account show
     "type": "user"
   }
 }
+```
+Create credentials file:
+```bash
+$HOME/.azure/credentials
 ```

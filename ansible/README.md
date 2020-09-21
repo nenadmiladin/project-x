@@ -62,6 +62,6 @@ Test:
 ansible all -m ping -i azure_rm.py
 ```
 
-##Create Jenkins Slave
+## Create Jenkins Slave
 
 ansible-playbook -i azure_rm.py Jenkins-Slave.yaml

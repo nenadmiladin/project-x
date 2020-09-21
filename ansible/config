@@ -1,4 +1,4 @@
-on Jenkins Master
-```bash
+on Jenkins Master do avoid "sudo: a password is required error" 
+
 export ANSIBLE_ASK_SUDO_PASS=true
-```
+

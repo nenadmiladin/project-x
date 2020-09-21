@@ -1,5 +1,5 @@
 # Azure Kubernetes Service (AKS) with Terraform
-
+:boom:
 This folder contains HashiCorp Terraform configuration required to create a Azure AKS cluster.
 
 ## Prerequisites

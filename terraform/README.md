@@ -102,8 +102,8 @@ terraform output configure
 
 Run the following commands to configure kubernetes client:
 
-$ terraform output kube_config > ~/.kube/aksconfig
-$ export KUBECONFIG=~/.kube/aksconfig
+$ terraform output kube_config > ~/.kube/config
+$ export KUBECONFIG=~/.kube/config
 ```
 
 Save kubernetes config file to `~/.kube/config`

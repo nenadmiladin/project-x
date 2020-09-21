@@ -1,4 +1,4 @@
-# Configure Ansible:
+# Configure Ansible on Azure CLI:
 
 Get Azuer Dynamic Inventory Script
 ```bash

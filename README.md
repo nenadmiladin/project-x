@@ -1,3 +1,4 @@
-:rocket:# Deploy Infrastructure:
+# Deploy Infrastructure:
+:rocket:
 
 

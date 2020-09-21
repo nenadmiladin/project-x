@@ -40,9 +40,13 @@ touch $HOME/.azure/credentials
 Populate credentials:
 
 id==AZURE_SUBSCRITION_ID
+
 tenantId==AZURE_TENANT
+
 appId==AZURE_CLIENT_ID
+
 password==AZURE_SECRET
+
 ```bash
 nenad@Azure:~$ cat .azure/credentials
 [default]

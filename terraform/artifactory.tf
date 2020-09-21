@@ -3,6 +3,7 @@
 #First Create a dummy file
 
 ########
+
 #Configure the Microsoft Azure Provider
 provider "azurerm" {
     # The "feature" block is required for AzureRM provider 2.x.
@@ -14,8 +15,15 @@ provider "azurerm" {
 resource "azurerm_resource_group" "myResourceGroup" {
   # (resource arguments)
 }
+
+resource "azurerm_virtual_network" "Jenkins-MasterVNET" {
+  # (resource arguments)
+}
+
 #######
 
 Import with command
-                                         - NEW NAME -                               - Subscription ID                  - Existing Resourse group 
+                           - NEW NAME , used old to keep track -                  - Subscription ID                  - Existing Resourse group 
 terraform import azurerm_resource_group.myResourceGroup /subscriptions/65b39c88-21ee-4efa-b52c-fc8151f2a75d/resourceGroups/myResourceGroup
+
+terraform import azurerm_virtual_network.Jenkins-MasterVNET /subscriptions/65b39c88-21ee-4efa-b52c-fc8151f2a75d/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/Jenkins-MasterVNET

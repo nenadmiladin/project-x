@@ -35,5 +35,15 @@ nenad@Azure:~$ az account show
 ```
 Create credentials file:
 ```bash
-$HOME/.azure/credentials
+touch $HOME/.azure/credentials
+```
+Populate credentials:
+```bash
+nenad@Azure:~$ cat .azure/credentials
+[default]
+subscription_id=65b39c88-21ee-4efa-b52c-fc8151f2a75d
+client_id=91f6c1fc-4e58-4e20-a6d1-ba948b380372
+secret=j6c9R3-_bux7ZkLOPOzW4z6aj1EA~3ZAm9
+tenant=97798909-f929-4d83-9cb8-3c4760d67488
+cloud_environment=AzureCloud
 ```

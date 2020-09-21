@@ -56,3 +56,8 @@ secret=j6c9R3-_bux7ZkLOPOzW4z6aj1EA~3ZAm9
 tenant=97798909-f929-4d83-9cb8-3c4760d67488
 cloud_environment=AzureCloud
 ```
+```bash
+Test:
+
+ansible all -m ping -i azure_rm.py
+```

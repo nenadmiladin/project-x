@@ -38,6 +38,7 @@ Create credentials file:
 touch $HOME/.azure/credentials
 ```
 Populate credentials:
+
 id==AZURE_SUBSCRITION_ID
 tenantId==AZURE_TENANT
 appId==AZURE_CLIENT_ID

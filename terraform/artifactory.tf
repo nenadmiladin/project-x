@@ -2,31 +2,31 @@
 
 #First Create a dummy file
 
-########
+###########################################################################
 
 #Configure the Microsoft Azure Provider
-provider "azurerm" {
+#rovider "azurerm" {
     # The "feature" block is required for AzureRM provider 2.x.
     # If you're using version 1.x, the "features" block is not allowed.
-    version = "~>2.0"
-    features {}
-}
+#   version = "~>2.0"
+#   features {}
+#
 
-resource "azurerm_resource_group" "myResourceGroup" {
+#esource "azurerm_resource_group" "myResourceGroup" {
   # (resource arguments)
-}
+#
 
-resource "azurerm_virtual_network" "Jenkins-MasterVNET" {
+#esource "azurerm_virtual_network" "Jenkins-MasterVNET" {
   # (resource arguments)
-}
-
-#######
+#
 
 # Import with command
 #                           - NEW NAME , used old to keep track -                  - Subscription ID                  - Existing Resourse group 
 # terraform import azurerm_resource_group.myResourceGroup /subscriptions/65b39c88-21ee-4efa-b52c-fc8151f2a75d/resourceGroups/myResourceGroup
 
 # terraform import azurerm_virtual_network.Jenkins-MasterVNET /subscriptions/65b39c88-21ee-4efa-b52c-fc8151f2a75d/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/Jenkins-MasterVNET
+
+###################################################################################################################################
 
 #Configure the Microsoft Azure Provider
 provider "azurerm" {
@@ -111,12 +111,12 @@ resource "azurerm_network_interface_security_group_association" "example" {
     network_security_group_id = azurerm_network_security_group.myterraformnsg.id
 }
 
-# Create (and display) an SSH key
-#resource "tls_private_key" "example_ssh" {
-#  algorithm = "RSA"
-#  rsa_bits = 4096
-#}
-#output "tls_private_key" { value = "${tls_private_key.example_ssh.private_key_pem}" }
+ Create (and display) an SSH key
+resource "tls_private_key" "example_ssh" {
+  algorithm = "RSA"
+  rsa_bits = 4096
+}
+output "tls_private_key" { value = "${tls_private_key.example_ssh.private_key_pem}" }
 
 # Create virtual machine
 resource "azurerm_linux_virtual_machine" "artifactoryvm" {
@@ -132,11 +132,7 @@ resource "azurerm_linux_virtual_machine" "artifactoryvm" {
         storage_account_type = "Premium_LRS"
     }
 
-    os_profile {
-    computer_name  = "artifactory"
-    admin_username = "azureuser"
-    admin_password = "azure"
-    }
+  
     source_image_reference {
         publisher = "Canonical"
         offer     = "UbuntuServer"
@@ -144,8 +140,8 @@ resource "azurerm_linux_virtual_machine" "artifactoryvm" {
         version   = "latest"
     }
 
-#    computer_name  = "artifactory"
-#    admin_username = "azureuser"
+    computer_name  = "artifactory"
+    admin_username = "azureuser"
     disable_password_authentication = true
 
     admin_ssh_key {

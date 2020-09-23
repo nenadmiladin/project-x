@@ -21,6 +21,8 @@ A Terraform showcase file for the deploymnet of an Artifactory VM on a preexisti
 
 # Infrastructure Overview:
 
+![Image of Infrastructure](https://i.ibb.co/Ld8Vbz7/Screenshot-2020-09-23-212008.png)
+
 
 Artifactory OSS was used, so no docker registry was available and Dockerhub was used instead.
 

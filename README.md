@@ -15,9 +15,9 @@ Jenkins-Slave VM was deployed utilizing ansible: *project-x/ansible/Jenkins-Slav
 
 AKS cluster was deployed with the use of Terraform files: *project-x/terraform/main.tf* and *project-x/terraform/variables.tf.*
 
-Another option which was written out is to utilize a script: *project-x/scripts/cluster.sh*
+Another option for privisioning of an AKS CLuster was also written out: *project-x/scripts/cluster.sh*
 
-A Terraform showcase file for the deploymnet of an Artifactory VM on preexisting infrastructure was also written out: *project-x/terraform/artifactory.tf*
+A Terraform showcase file for the deploymnet of an Artifactory VM on a preexisting infrastructure can be found here: *project-x/terraform/artifactory.tf*
 
 
 

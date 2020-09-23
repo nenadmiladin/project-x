@@ -19,6 +19,10 @@ Another option for privisioning of an AKS CLuster was also written out: *project
 
 A Terraform showcase file for the deploymnet of an Artifactory VM on a preexisting infrastructure can be found here: *project-x/terraform/artifactory.tf*
 
+# Infrastructure Overview:
+
+
+Artifactory OSS was used, so no docker registry was available and Dockerhub was used instead.
 
 http://52.190.44.102/ - Kubernetes Cluster Azure Vote App
 

@@ -124,6 +124,7 @@ export KUBECONFIG=~/.kube/config
 kubectl get nodes
 ```
 
+EXAMPLE:
 ```bash
 nenad@Azure:~$ kubectl get pods
 NAME                                  READY   STATUS    RESTARTS   AGE

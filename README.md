@@ -22,7 +22,7 @@ A Terraform showcase file for the deploymnet of an Artifactory VM on a preexisti
 
 http://52.190.44.102/ - Kubernetes Cluster Azure Vote App
 
-http://52.147.205.42:8080/ - Jenkins (user: admin, password: admin123)
+http://52.147.205.42:8080/ - Jenkins (user: admin, password: Admin123!)
 
 http://40.71.63.158:8081/artifactory - Artifactory (user: admin, password Admin123!)
 

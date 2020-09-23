@@ -13,7 +13,7 @@ Jenkins-Master VM was deployed utilizing the script: project-x/scripts/jenkins-m
 
 Jenkins-Slave VM was deployed utilizing ansible: project-x/ansible/Jenkins-Slave.yaml
 
-AKS cluster was deployed with a Terraform files: project-x/terraform/main.tf and project-x/terraform/variables.tf
+AKS cluster was deployed with the use of Terraform files: project-x/terraform/main.tf and project-x/terraform/variables.tf
 Another option which was written out is to utilize a script: project-x/scripts/cluster.sh
 
 

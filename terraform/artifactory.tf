@@ -146,12 +146,12 @@ resource "azurerm_linux_virtual_machine" "artifactoryvm" {
 
 #    computer_name  = "artifactory"
 #    admin_username = "azureuser"
-    disable_password_authentication = false
+    disable_password_authentication = true
 
-#    admin_ssh_key {
-#        username       = "azureuser"
-#        public_key     = tls_private_key.example_ssh.public_key_openssh
-#        admin_password = "azure"
-#    }
+    admin_ssh_key {
+        username       = "azureuser"
+       public_key     = tls_private_key.example_ssh.public_key_openssh
+        admin_password = "azure"
+    }
 
 }

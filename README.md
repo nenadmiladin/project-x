@@ -9,7 +9,7 @@ The infrastructure consists of 2 VMs (Jenkins-Master, Jenkins-Slave )and one Azu
 
 The free Azure account is limited to 4 vCPUs, while AKS needs to be run on at least 2 vCPUs.
 
-Jenkins-Master VM was deployed utilizing the script: *project-x/scripts/jenkins-master.sh* and was configured with *project-x/scripts/config-jenkins.sh*
+Jenkins-Master VM was deployed utilizing the script: *project-x/scripts/jenkins-master.sh* and was **configured** with *project-x/scripts/config-jenkins.sh*
 
 Jenkins-Slave VM was deployed utilizing ansible: *project-x/ansible/Jenkins-Slave.yaml*
 

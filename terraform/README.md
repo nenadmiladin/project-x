@@ -126,9 +126,24 @@ kubectl get nodes
 
 EXAMPLE:
 ```bash
-nenad@Azure:~$ kubectl get pods
-NAME                                  READY   STATUS    RESTARTS   AGE
-my-release-jenkins-76fcd6cd54-sb7dw   1/1     Running   0          44m
-nginx-deployment-85ff79dd56-vgmgl     1/1     Running   0          55m
-nginx-deployment-85ff79dd56-xz7cw     1/1     Running   0          55m
+nenad@Azure:~$ kubectl get all
+NAME                                   READY   STATUS    RESTARTS   AGE
+pod/azure-vote-back-7dbcd6c889-qz75l   1/1     Running   0          28h
+pod/azure-vote-front-d9566c557-qwpk4   1/1     Running   0          27h
+
+NAME                       TYPE           CLUSTER-IP    EXTERNAL-IP     PORT(S)        AGE
+service/azure-vote-back    ClusterIP      10.0.178.17   <none>          6379/TCP       28h
+service/azure-vote-front   LoadBalancer   10.0.20.115   52.190.44.102   80:32218/TCP   28h
+service/kubernetes         ClusterIP      10.0.0.1      <none>          443/TCP        3d3h
+
+NAME                               READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/azure-vote-back    1/1     1            1           28h
+deployment.apps/azure-vote-front   1/1     1            1           28h
+
+NAME                                          DESIRED   CURRENT   READY   AGE
+replicaset.apps/azure-vote-back-7dbcd6c889    1         1         1       28h
+replicaset.apps/azure-vote-front-657d4d5c97   0         0         0       27h
+replicaset.apps/azure-vote-front-67977fb785   0         0         0       27h
+replicaset.apps/azure-vote-front-68cd455ffd   0         0         0       27h
+replicaset.apps/azure-vote-front-d9566c557    1         1         1       28h
 ```

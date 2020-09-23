@@ -1,4 +1,4 @@
-# Infrastructure Deploy:
+# Infrastructure Deployment:
 :rocket:
 
 As a showcase, 3 different ways for Infrastructure deployment were used: scripts, Ansible yaml files and Terraform files.

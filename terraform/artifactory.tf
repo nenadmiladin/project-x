@@ -5,18 +5,18 @@
 ###########################################################################
 
 #Configure the Microsoft Azure Provider
-#rovider "azurerm" {
+#provider "azurerm" {
     # The "feature" block is required for AzureRM provider 2.x.
     # If you're using version 1.x, the "features" block is not allowed.
 #   version = "~>2.0"
 #   features {}
 #
 
-#esource "azurerm_resource_group" "myResourceGroup" {
+#resource "azurerm_resource_group" "myResourceGroup" {
   # (resource arguments)
 #
 
-#esource "azurerm_virtual_network" "Jenkins-MasterVNET" {
+#resource "azurerm_virtual_network" "Jenkins-MasterVNET" {
   # (resource arguments)
 #
 
